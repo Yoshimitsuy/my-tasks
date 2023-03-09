@@ -1,0 +1,10 @@
+
+:root {
+  --bg-1: var(#0d0d0d);
+}
+
+
+.header {
+  background-color: var(--bg-1);
+  display: flex;
+}
