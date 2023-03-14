@@ -1,10 +1,16 @@
-import { Header } from "./components/Header";
+import React from 'react';
+import { Header } from './components/Header';
+import { Task } from './components/Tasks';
+
 
 function App() {
 
   return (
-    <Header />
-  )
+    <>
+      <Header />
+      <Task />
+    </>
+  );
 }
 
 export default App;

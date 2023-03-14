@@ -1,0 +1,13 @@
+.tasks {
+  display: flex;
+  justify-content: center;
+  margin-top: 70px;
+}
+
+.header {
+  display: flex;
+}
+
+.colorText {
+  color: red
+}
