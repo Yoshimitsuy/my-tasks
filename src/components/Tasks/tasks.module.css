@@ -1,0 +1,49 @@
+
+:root {
+  --text-color: #8a39d6;
+  --bg-span: #333333;
+  --text-span: #D9D9D9;
+  --text-p: #4EA8DE;
+}
+
+.tasks {
+  width: 100%;
+  max-width: 736px;
+  margin: 0 auto;
+  margin-top: 90px;
+  padding: 0 1rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.header div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.createTask {
+  color: var(--text-p);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.colorText {
+  color: var(--text-color);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.header span {
+  background-color: var(--bg-span);
+  color: var(--text-span);
+  padding: 3px 9px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}
