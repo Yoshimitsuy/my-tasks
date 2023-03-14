@@ -7,7 +7,7 @@ export function Task() {
       <header className={ styles.header }>
 
         <div>
-          <p>create tasks</p>
+          <p className={ styles.createTask }>create tasks</p>
           <span>10</span>
         </div>
 
