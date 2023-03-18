@@ -7,15 +7,16 @@ import PropTypes from 'prop-types';
 
 export function Header({ onAddTask }) {
 
-  const [title, settitle] = useState('');
+  const [title, setTitle] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
     onAddTask(title);
+    setTitle('');
   };
 
   const onChangeTitle = (e) => {
-    settitle(e.target.value);
+    setTitle(e.target.value);
   };
 
   return (
