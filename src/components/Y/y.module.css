@@ -1,0 +1,48 @@
+:root {
+  --button-color: #34174d;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 30px;
+}
+
+.author button {
+  background: var(--button-color);
+  height: 100%;
+  padding: 15px;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+  font-size: 14px;
+  margin: 10px;
+}
+
+.author button {
+  animation: mudar-cor 15s infinite;
+}
+
+@keyframes mudar-cor {
+  0% {
+    background-color: red;
+  }
+  33% {
+    background-color: green;
+  }
+  66% {
+    background-color: blue;
+  }
+  100% {
+    background-color: red;
+  }
+}
+
+a {
+  text-decoration: none;
+}
