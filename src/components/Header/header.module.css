@@ -13,6 +13,10 @@
   position: relative;
 }
 
+.header img {
+  margin-bottom: 30px;
+}
+
 .newTaskForm {
   position: absolute;
   height: 54px;
