@@ -4,7 +4,7 @@ import { Task } from '../Task';
 import PropTypes from 'prop-types';
 
 
-export function Tasks({ tasks, onComplete }) {
+export function Tasks({ tasks, onComplete, onDelete }) {
 
   const tasksQtd = tasks.length;
   const completedTasks = tasks.filter(task => task.isCompleted).length;
@@ -28,7 +28,7 @@ export function Tasks({ tasks, onComplete }) {
       <div className={ styles.list }>
         {
           tasks.map(task => (
-            <Task key={ task.id } task={ task } onComplete={ onComplete }/>
+            <Task key={ task.id } task={ task } onComplete={ onComplete } onDelete={ onDelete }/>
           ))
         }
       </div>
@@ -38,5 +38,6 @@ export function Tasks({ tasks, onComplete }) {
 
 Tasks.propTypes = {
   tasks: PropTypes.string.isRequired,
-  onComplete: PropTypes.func.isRequired
+  onComplete: PropTypes.func.isRequired,
+  onDelete: PropTypes.func.isRequired,
 };
