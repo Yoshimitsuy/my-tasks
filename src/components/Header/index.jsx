@@ -1,15 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './header.module.css';
 import todoLogo from '../../assets/todoLogo.svg';
 import { BsClipboardPlusFill } from 'react-icons/bs';
+import PropTypes from 'prop-types';
 
-export function Header() {
+
+export function Header({ onAddTask }) {
+
+  const [title, settitle] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onAddTask(title);
+  };
+
+  const onChangeTitle = (e) => {
+    settitle(e.target.value);
+  };
+
   return (
     <header className={ styles.header } >
       <img src={todoLogo} alt="" />
 
-      <form className={ styles.newTaskForm }>
-        <input type="text" placeholder='add a new task' />
+      <form onSubmit={ handleSubmit } className={ styles.newTaskForm }>
+        <input type="text" placeholder='add a new task' value={ title } onChange={ onChangeTitle }/>
         <button>
           create
           <BsClipboardPlusFill size={ 20 } />  
@@ -18,3 +32,7 @@ export function Header() {
     </header>
   );
 }
+
+Header.propTypes = {
+  onAddTask: PropTypes.func.isRequired,
+};
