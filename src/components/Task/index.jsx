@@ -2,16 +2,17 @@ import React from 'react';
 import styles from './task.module.css';
 import { FaTrashAlt } from 'react-icons/fa';
 import PropTypes from 'prop-types';
+import { BsFillCheckCircleFill } from 'react-icons/bs';
 
 
-export function Task({ task }) {
+export function Task({ task, onComplete }) {
   return (
     <div className={ styles.task }>
-      <button className={ styles.checkContainer }>
-        <div />
+      <button className={ styles.checkContainer } onClick={ () => onComplete(task.id)}>
+        {task.isCompleted ? <BsFillCheckCircleFill />: <div /> }
       </button>
 
-      <p>{ task.title }</p>
+      <p className={ task.isCompleted ? styles.taskCompleted : '' }>{ task.title }</p>
 
       <button className={ styles.delete }>
         <FaTrashAlt size= { 20 }/>
@@ -22,5 +23,7 @@ export function Task({ task }) {
 
 Task.propTypes = {
   title: PropTypes.string.isRequired,
-  task: PropTypes.string.isRequired
+  task: PropTypes.string.isRequired,
+  onComplete: PropTypes.func.isRequired,
+
 };

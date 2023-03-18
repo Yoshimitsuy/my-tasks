@@ -18,10 +18,23 @@ function App() {
     ]); 
   };
 
+  const completedById = (taskId) => {
+    const newTasks = tasks.map(task => {
+      if(task.id === taskId) {
+        return { 
+          ...task, 
+          isCompleted: !task.isCompleted
+        };
+      }
+      return task;
+    });
+    setTasks(newTasks);
+  };
+
   return (
     <>
       <Header onAddTask={ addTask }/>
-      <Tasks tasks={ tasks }/>
+      <Tasks tasks={ tasks } onComplete={ completedById }/>
     </>
   );
 }
