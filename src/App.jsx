@@ -1,14 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Header } from './components/Header';
 import { Tasks } from './components/Tasks';
 
+const LOCAL_STORAGE = 'task:saved';
 
 function App() {
 
   const [tasks, setTasks] = useState([]);
 
+  const loadSaves = () => {
+    const saves = localStorage.getItem(LOCAL_STORAGE);
+    if(saves) {
+      setSaveTasks(JSON.parse(saves));
+    }
+  };
+
+  useEffect(() => {
+    loadSaves();
+  }, []);
+  
+
+  const setSaveTasks = (saves) => {
+    setTasks(saves);
+    localStorage.setItem(LOCAL_STORAGE, JSON.stringify(saves));
+  };
+
   const addTask = (taskTitle) => {
-    setTasks([
+    setSaveTasks([
       ...tasks,
       {
         id: crypto.randomUUID(),
@@ -28,12 +46,12 @@ function App() {
       }
       return task;
     });
-    setTasks(newTasks);
+    setSaveTasks(newTasks);
   };
 
   const deleteTaskById = (taskId) => {
     const newTasks = tasks.filter(task => task.id !== taskId);
-    setTasks(newTasks);
+    setSaveTasks(newTasks);
   };
 
   return (
