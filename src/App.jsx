@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Header } from './components/Header';
 import { Tasks } from './components/Tasks';
+import { Y } from './components/Y';
 
 const LOCAL_STORAGE = 'task:saved';
 
@@ -58,6 +59,7 @@ function App() {
     <>
       <Header onAddTask={ addTask }/>
       <Tasks tasks={ tasks } onComplete={ completedById } onDelete={ deleteTaskById }/>
+      <Y />
     </>
   );
 }
