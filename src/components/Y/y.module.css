@@ -1,5 +1,8 @@
 :root {
   --button-color: #34174d;
+  --color-1: #d40997;
+  --color-2: #a913d6;
+  --color-3: #48077c;
 }
 
 .author {
@@ -25,21 +28,21 @@
 }
 
 .author button {
-  animation: mudar-cor 15s infinite;
+  animation: mudar-cor 10s infinite;
 }
 
 @keyframes mudar-cor {
   0% {
-    background-color: red;
+    background-color: var(--color-1);
   }
   33% {
-    background-color: green;
+    background-color: var(--color-2);
   }
   66% {
-    background-color: blue;
+    background-color:var(--color-3);
   }
   100% {
-    background-color: red;
+    background-color: var(--color-1);
   }
 }
 
